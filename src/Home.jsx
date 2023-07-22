@@ -1,8 +1,10 @@
 import React from "react";
+import StackBarChart from "./components/StackBarChart";
+import CircularProgressBar from "./components/CircularProgressBar";
 
 const Home = () => {
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-10">
       <div className="space-y-10">
         <div className="flex gap-5 items-center">
           <div>
@@ -68,7 +70,128 @@ const Home = () => {
           </ul>
         </div>
       </div>
-      <div></div>
+      <div className="col-span-2 space-y-10">
+        <div>
+          <p className="text-[#6356FA]">Retirement income</p>
+          <h1 className="text-2xl">Starting Year 2056</h1>
+        </div>
+        <div className="grid grid-cols-3 gap-6">
+          <div className="space-y-3">
+            <h1 className="text-2xl font-bold">$300,000</h1>
+            <p>My Goal</p>
+            <hr className=" border-[#6356FA]" />
+          </div>
+          <div className="space-y-3">
+            <h1 className="text-2xl font-bold">59%</h1>
+            <p>Goal Achieved</p>
+            <hr className=" border-[#6356FA]" />
+          </div>
+          <div className="space-y-3">
+            <h1 className="text-2xl font-bold">$300</h1>
+            <p>Est. Monthly Income</p>
+            <hr className=" border-[#6356FA]" />
+          </div>
+        </div>
+        <div className="space-y-8">
+          <h1 className="text-xl font-bold">Contribution Overtime</h1>
+          <div className="flex justify-between items-center gap-5">
+            <div className="flex items-center gap-2 text-[18px]">
+              <span className="w-5 h-3 bg-[#0E0F9F] flex items-center justify-center rounded-full"></span>
+              <span className="text-[#afafaf] font-medium">Employer:</span>
+              <span className="font-bold">K 73,500</span>
+            </div>
+            <div className="flex items-center gap-4 text-[18px]">
+              <span className="w-5 h-3 bg-[#4B3EFA] flex items-center justify-center rounded-full"></span>
+              <span className="text-[#afafaf] font-medium">Employee:</span>
+              <span className="font-bold">K 52,500</span>
+            </div>
+            <div className="flex items-center gap-4 text-[18px]">
+              <span className="w-5 h-3 bg-[#88B0FC] flex items-center justify-center rounded-full"></span>
+              <span className="text-[#afafaf] font-medium">Total Interest:</span>
+              <span className="font-bold">K 244,313</span>
+            </div>
+          </div>
+          <StackBarChart />
+        </div>
+        <div className="space-y-8">
+          <div>
+            <h1 className="text-xl font-bold">How do I compare to my peers?</h1>
+            <p>These number represent current goal achievement</p>
+          </div>
+          <div className="grid grid-cols-3 gap-10 items-center">
+            <div className="space-y-5">
+              <div className="flex items-center gap-4">
+                <span className="font-bold text-[#545454]">Age:</span>
+                <div className="text-[#7B7B7B] font-medium items-center relative">
+                  <select className=" items-center pr-4 focus:outline-none appearance-none">
+                    <option value="">Under 30</option>
+                  </select>
+                  <span className="text-xs absolute -ml-3 top-[50%] -translate-y-[50%] pointer-events-none">
+                    ▼
+                  </span>
+                </div>
+              </div>
+              <hr />
+              <div className="flex items-center gap-4">
+                <span className="font-bold text-[#545454]">Salary:</span>
+                <div className="text-[#7B7B7B] font-medium items-center relative">
+                  <select className=" items-center pr-4 focus:outline-none appearance-none">
+                    <option value="">K 20 - K 30</option>
+                  </select>
+                  <span className="text-xs absolute top-[50%] -ml-3 -translate-y-[50%] pointer-events-none">
+                    ▼
+                  </span>
+                </div>
+              </div>
+              <hr />
+              <div className="flex items-center gap-4">
+                <span className="font-bold text-[#545454]">Gender:</span>
+                <div className="text-[#7B7B7B] font-medium items-center relative">
+                  <select className="items-center pr-4 focus:outline-none appearance-none">
+                    <option value="">Male</option>
+                  </select>
+                  <span className="text-xs absolute top-[50%] -ml-3 -translate-y-[50%] pointer-events-none">
+                    ▼
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-span-2 flex justify-between items-center font-bold">
+              <div>
+                <CircularProgressBar
+                  percentage={78}
+                  strokeWidth={10}
+                  trailColor="#D4F7EE"
+                  pathColor="#37D5AC"
+                  textColor="#313131"
+                />
+                <p className="text-center font-bold text-[#545454]">Average</p>
+              </div>
+              <div>
+                <CircularProgressBar
+                  percentage={95}
+                  strokeWidth={10}
+                  trailColor="#D4F7EE"
+                  pathColor="#37D5AC"
+                  textColor="#313131"
+                />
+                <p className="text-center font-bold text-[#545454]">Top</p>
+              </div>
+              <div>
+                <CircularProgressBar
+                  percentage={59}
+                  strokeWidth={10}
+                  trailColor="#D4F7EE"
+                  pathColor="#37D5AC"
+                  textColor="#313131"
+                />
+                <p className="text-center font-bold text-[#545454]">Me</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div></div>
     </div>
   );
