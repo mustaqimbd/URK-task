@@ -1,12 +1,6 @@
 import React from "react";
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
 const data = [
   { value: 20, value1: 20, value2: 20, value3: 20 },
@@ -42,10 +36,7 @@ const StackBarChart = () => {
 
   return (
     <ResponsiveContainer width="100%" height={250}>
-      <BarChart
-        data={data}
-        margin={{ top: 20 }}
-      >
+      <BarChart data={data} margin={{ top: 20, left: -17 }}>
         <XAxis
           dataKey="value"
           axisLine={{ stroke: "none" }}
@@ -55,7 +46,7 @@ const StackBarChart = () => {
           axisLine={{ stroke: "none" }}
           tickLine={{ stroke: "none" }}
           tickFormatter={formatYAxisTick}
-          domain={[0, 300]} 
+          domain={[0, 300]}
           ticks={yAxisTicks}
         />
         <Bar dataKey="value1" stackId="stack" fill="#0E0F9F" />

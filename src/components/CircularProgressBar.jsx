@@ -1,10 +1,16 @@
-import React from 'react';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import React from "react";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
-const CircularProgressBar = ({ percentage, strokeWidth, trailColor, pathColor, textColor }) => {
+const CircularProgressBar = ({
+  percentage,
+  strokeWidth,
+  trailColor,
+  pathColor,
+  textColor,
+}) => {
   return (
-    <div style={{ width: '100px' }}>
+    <div style={{ width: "100px" }}>
       <CircularProgressbar
         value={percentage}
         text={`${percentage}%`}
@@ -14,7 +20,7 @@ const CircularProgressBar = ({ percentage, strokeWidth, trailColor, pathColor, t
           trailColor: trailColor,
           trailWidth: 5,
           pathColor: pathColor,
-          strokeLinecap: 'round',
+          strokeLinecap: "round",
         })}
       />
     </div>
