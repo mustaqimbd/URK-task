@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="text-3xl text-[#A3A3A3] p-4 flex flex-row lg:flex-col justify-between w-28 lg:min-h-screen">
+    <div className="text-3xl text-[#A3A3A3] p-4 pl-0 flex flex-row lg:flex-col justify-between w-28 lg:min-h-screen">
       <div className="flex flex-row-reverse lg:flex-col justify-between items-center lg:gap-10  lg:min-h-[50%]">
         <ul className="lg:space-y-5 flex flex-row lg:flex-col items-center">
           <li className="text-[#4B3EFA] hidden lg:block">
